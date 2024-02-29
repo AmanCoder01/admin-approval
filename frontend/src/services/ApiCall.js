@@ -1,8 +1,8 @@
 import axios from "axios";
 
+
 const domainUrl = "https://admin-approval-app.vercel.app/api/";
 const locaUrl = "http://localhost:3000/api/";
-
 const SignupApi = async (data) => {
     return await axios.post(`${domainUrl}register`, data, { withCredentials: true });
 }
