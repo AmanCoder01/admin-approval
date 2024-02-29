@@ -1,16 +1,18 @@
 import axios from "axios";
 
+const domainUrl = "https://admin-approval-app.vercel.app/api/";
+const locaUrl = "http://localhost:3000/api/";
 
 const SignupApi = async (data) => {
-    return await axios.post('http://localhost:3000/api/register', data, { withCredentials: true });
+    return await axios.post(`${domainUrl}register`, data, { withCredentials: true });
 }
 const LoginApi = async (data) => {
-    return await axios.post('http://localhost:3000/api/login', data, { withCredentials: true });
+    return await axios.post(`${domainUrl}login`, data, { withCredentials: true });
 }
 
 const getUserDetails = async (data) => {
     let token = getToken();
-    return await axios.get('http://localhost:3000/api/admin/dashboard',
+    return await axios.get(`${domainUrl}admin/dashboard`,
         {
             withCredentials: true,
             headers: {
@@ -21,7 +23,7 @@ const getUserDetails = async (data) => {
 
 const approveUser = async (data) => {
     let token = getToken();
-    return await axios.post('http://localhost:3000/api/admin/dashboard/approve', data,
+    return await axios.post(`${domainUrl}admin/dashboard/approve`, data,
         {
             withCredentials: true,
             headers: {
