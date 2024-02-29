@@ -40,7 +40,7 @@ const Login = () => {
             if (res.data.status === 200) {
                 localStorage.setItem("user", JSON.stringify(res.data.data.token));
                 localStorage.setItem("profile", JSON.stringify(res.data.data.data));
-                console.log(res.data.data.data);
+                // console.log(res.data.data.data);
                 dispatch(setUserData(res.data.data.data));
                 dispatch(setToken(res.data.data.token));
                 navigate("/dashboard");
