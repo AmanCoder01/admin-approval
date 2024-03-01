@@ -44,7 +44,7 @@ const AdminHome = () => {
                             <h2 className='text-xl'>{item.firstName} {item?.lastName}</h2>
                             <h2 className='text-sm italic text-richblack-100'> ~ {item.email}</h2>
                         </div>
-                        <div className='flex items-center gap-4'>
+                        <div className='flex items-center gap-4 flex-wrap'>
                             <button onClick={() => declineHandler(item._id)} className=' bg-red-500 text-richblack-700 font-semibold text-lg  py-[1px] px-3 min:px-1 rounded-md '>Decline</button>
                             <button onClick={() => submitHandler(item._id)} className=' bg-yellow-400 text-richblack-700 font-semibold text-lg  py-[1px] px-3 min:px-1  rounded-md '>Verify</button>
                         </div>
