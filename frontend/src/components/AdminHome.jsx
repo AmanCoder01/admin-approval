@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { approveUser, getUserDetails } from '../services/ApiCall'
+import { approveUser, getUserDetails, deleteUser } from '../services/ApiCall'
 import { toast } from "react-hot-toast";
-import { DeleteUserAccount } from '../../../server/controllers/AdminDasboard.controller';
 
 const AdminHome = () => {
     const [userData, setUserData] = useState([]);
@@ -23,7 +22,7 @@ const AdminHome = () => {
 
     const declineHandler = async (userId) => {
         try {
-            const res = await DeleteUserAccount({ userId });
+            const res = await deleteUser({ userId });
             //    console.log(res);
             toast.success("Account Deleted Successfully");
         } catch (error) {
@@ -36,7 +35,7 @@ const AdminHome = () => {
     }, [userData])
 
     return (
-        <div className='flex flex-col gap-5 items-center max-h-screen  w-2/5 min-w-[300px] mx-auto py-[3rem] text-richblack-5'>
+        <div className='flex flex-col gap-5 items-center max-h-screen  w-2/5 min-w-[320px] mx-auto py-[3rem] text-richblack-5'>
             <h1 className='text-2xl font-bold pb-6'>Admin Dashboard</h1>
             {
                 userData.map((item) => (

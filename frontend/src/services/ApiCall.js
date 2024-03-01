@@ -53,4 +53,4 @@ function getToken() {
 }
 
 
-export { SignupApi, LoginApi, getUserDetails,approveUser }
+export { SignupApi, LoginApi, getUserDetails,approveUser,deleteUser }
