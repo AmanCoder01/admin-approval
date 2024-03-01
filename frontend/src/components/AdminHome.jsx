@@ -37,7 +37,7 @@ const AdminHome = () => {
     }, [userData])
 
     return (
-        <div className='flex flex-col gap-5 items-center max-h-screen  w-2/5 min-w-[260px] mx-auto py-[3rem] text-richblack-5'>
+        <div className='flex flex-col gap-5 items-center max-h-screen  w-2/5 min-w-[300px] mx-auto py-[3rem] text-richblack-5'>
             <h1 className='text-2xl font-bold pb-6'>Admin Dashboard</h1>
             {
                 userData.map((item) => (
