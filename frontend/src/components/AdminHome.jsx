@@ -42,7 +42,7 @@ const AdminHome = () => {
                     <div key={item._id} className='w-full flex items-center justify-between  text-richblack-5 bg-richblack-700 py-2 rounded-md px-4 border border-gray-500'>
                         <div className='flex items-center gap-2'>
                             <h2 className='text-xl'>{item.firstName} {item?.lastName}</h2>
-                            <h2 className='text-sm italic'>{item.email}</h2>
+                            <h2 className='text-sm italic text-richblack-100'>{item.email}</h2>
                         </div>
                         <div className='flex items-center gap-4'>
                             <button onClick={() => declineHandler(item._id)} className=' bg-red-500 text-richblack-700 font-semibold text-lg  py-[1px] px-3 min:px-2 rounded-md '>Decline</button>
