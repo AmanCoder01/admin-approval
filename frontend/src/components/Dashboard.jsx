@@ -5,9 +5,8 @@ import { setToken, setUserData } from '../slices/authSlice';
 
 
 const Dashboard = () => {
-  const { userData } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-
+  const { userData } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(setToken(JSON.parse(localStorage.getItem("user"))));

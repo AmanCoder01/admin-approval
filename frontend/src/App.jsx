@@ -9,6 +9,8 @@ import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import PrivateRoute from './components/PrivateRoute';
+import OpenRoute from './components/OpenRoute';
 
 function App() {
 
@@ -20,14 +22,27 @@ function App() {
         </div>
         <div className="mt-[4rem]">
           <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<OpenRoute>
+              <Welcome />
+            </OpenRoute>} />
+
+            <Route path="/signup" element={<OpenRoute>
+              <Signup />
+            </OpenRoute>} />
+
+            <Route path="/login" element={<OpenRoute>
+              <Login />
+            </OpenRoute>} />
+
+            <Route path="/dashboard" element={<PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>} />
+
+
             <Route path="*" element={<Error />} />
           </Routes>
         </div>
-      </div>
+      </div>d
     </>
   )
 }

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { approveUser, getUserDetails } from '../services/ApiCall'
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux";
 
 const AdminHome = () => {
     const [userData, setUserData] = useState([]);
+
     const fetchData = async () => {
         const res = await getUserDetails();
         setUserData(res.data.data)
@@ -11,8 +14,8 @@ const AdminHome = () => {
 
     const submitHandler = async (userId) => {
         try {
-           const res= await approveUser({userId});
-        //    console.log(res);
+            const res = await approveUser({ userId });
+            //    console.log(res);
             toast.success("Account Approved Successfully");
         } catch (error) {
             console.log(error);

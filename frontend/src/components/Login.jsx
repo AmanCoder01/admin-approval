@@ -5,7 +5,7 @@ import frameImage from "../assets/frame.png";
 import mainImage from "../assets/login.png";
 import { LoginApi } from '../services/ApiCall';
 import { setToken, setUserData } from '../slices/authSlice';
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 
 
 
@@ -26,7 +26,6 @@ const Login = () => {
             }
         ))
     }
-
 
 
 
