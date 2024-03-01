@@ -35,7 +35,7 @@ const AdminHome = () => {
     }, [userData])
 
     return (
-        <div className='flex flex-col gap-5 items-center max-h-screen  w-2/5 min-w-[320px] mx-auto py-[3rem] text-richblack-5'>
+        <div className='flex flex-col gap-5 items-center max-h-screen  w-2/5 min-w-[340px] mx-auto py-[3rem] text-richblack-5'>
             <h1 className='text-2xl font-bold pb-6'>Admin Dashboard</h1>
             {
                 userData.map((item) => (
@@ -45,8 +45,8 @@ const AdminHome = () => {
                             <h2 className='text-sm italic text-richblack-100'> ~ {item.email}</h2>
                         </div>
                         <div className='flex items-center gap-4'>
-                            <button onClick={() => declineHandler(item._id)} className=' bg-red-500 text-richblack-700 font-semibold text-lg  py-[1px] px-3 min:px-2 rounded-md '>Decline</button>
-                            <button onClick={() => submitHandler(item._id)} className=' bg-yellow-400 text-richblack-700 font-semibold text-lg  py-[1px] px-3 min:px-2  rounded-md '>Verify</button>
+                            <button onClick={() => declineHandler(item._id)} className=' bg-red-500 text-richblack-700 font-semibold text-lg  py-[1px] px-3 min:px-1 rounded-md '>Decline</button>
+                            <button onClick={() => submitHandler(item._id)} className=' bg-yellow-400 text-richblack-700 font-semibold text-lg  py-[1px] px-3 min:px-1  rounded-md '>Verify</button>
                         </div>
                     </div>
                 ))
