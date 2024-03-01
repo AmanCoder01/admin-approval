@@ -32,6 +32,17 @@ const approveUser = async (data) => {
         });
 }
 
+const deleteUser = async (data) => {
+    let token = getToken();
+    return await axios.post(`${domainUrl}admin/dashboard/delete`, data,
+        {
+            withCredentials: true,
+            headers: {
+                auth: token
+            }
+        });
+}
+
 
 
 function getToken() {

@@ -4,7 +4,7 @@ import LoginController from "../controllers/Login.controller.js";
 import RegisterSchema from "../validateSchemaa/RegisterSchema.js";
 import LoginSchema from "../validateSchemaa/LoginSchema.js";
 import AuthMiddleware from "../middlewares/AuthMiddleware.js";
-import {AdminDashboardController, ApproveUserAccount} from "../controllers/AdminDasboard.controller.js";
+import {AdminDashboardController, ApproveUserAccount, DeleteUserAccount} from "../controllers/AdminDasboard.controller.js";
 
 const apiRoute=express.Router();
 const protectedRoute=express.Router();
@@ -14,5 +14,6 @@ apiRoute.post('/login',LoginSchema, LoginController);
 
 apiRoute.get("/admin/dashboard",AuthMiddleware, AdminDashboardController);
 apiRoute.post("/admin/dashboard/approve",AuthMiddleware, ApproveUserAccount);
+apiRoute.post("/admin/dashboard/delete",AuthMiddleware, DeleteUserAccount);
 
 export {apiRoute,protectedRoute};

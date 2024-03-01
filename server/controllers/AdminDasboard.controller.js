@@ -47,3 +47,27 @@ export const ApproveUserAccount = async (req, res) => {
     }
 
 }
+
+
+export const DeleteUserAccount = async (req, res) => {
+    try {
+
+        if (req.accountType !== 'admin') {
+            return res.json(jsonGenerate(statusCode.UNPROCCESSABLE_ENTRY, 'You are not admin!'))
+        }
+
+        const userId = req.body.userId;
+
+        if (!userId) {
+            return res.json(jsonGenerate(statusCode.UNPROCCESSABLE_ENTRY, 'user id reqyured'))
+        }
+        
+        const updateDetails = await User.findByIdAndDelete(userId);
+        return res.json(jsonGenerate(statusCode.SUCCESS, "User Deleted", updateDetails));
+
+    } catch (error) {
+        return res.json(jsonGenerate(statusCode.VALIDATION_ERROR, "Validation error", error));
+
+    }
+
+}
